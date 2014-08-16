@@ -1,0 +1,19 @@
+#!perl
+
+use strict;
+use warnings;
+
+our $VERSION = '0.001';
+$VERSION = eval $VERSION;
+
+use App::multiwhich;
+use YAML::XS;
+
+run(\@ARGV);
+
+sub run {
+    my $argv = shift;
+    my $app = App::multiwhich->new( $argv );
+    print Dump $app->run;
+}
+
